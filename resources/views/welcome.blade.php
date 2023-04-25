@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>UPLIFT</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../../../images/logos/uplift_logo.png">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
