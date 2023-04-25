@@ -13,6 +13,36 @@
     background: #fff;
     padding: 30px;
 }
+.first-header-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+}
 .logo {
-    width: 150px;
+    width: 130px;
+}
+.search-bar {
+    width: 265px;
+    padding: 30px 10px;
+    background: #F4F4F4;
+    border-radius: 30px;
+}
+.login-container {
+    width: 100%;
+    height: 100vh;
+    background: url('../../public/images/login-bg.png');
+    background-size: cover;
+    background-position: top center;
+}
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-form {
+    padding: 50px;
+    background: #fff;
+    border-radius: 30px;
 }
