@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../css/app.css'; // Import the app.css file
+import '../css/app.css';
+
 import AuthHeader from './components/ui/Header/AuthHeader';
 import Login from './pages/Login';
 import Home from './pages/Home';
