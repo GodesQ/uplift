@@ -22,5 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('auth/login', [UserAuthController::class, 'login']);
-Route::get('auth/google/login', [GoogleController::class, 'redirectToGoogle']);
+Route::post('auth/register', [UserAuthController::class, 'register']);
+Route::get('auth/check-verification-email-token/{token}', [UserAuthController::class, 'checkEmailVerificationToken']);
+
+Route::any('auth/google/login', [GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
