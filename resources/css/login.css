@@ -12,6 +12,7 @@
     align-items: center;
 }
 .login-content {
+    max-width: 60%;
     padding: 50px;
     background: #fff;
     border-radius: 30px;

@@ -1,30 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../css/app.css';
-
-import AuthHeader from './components/ui/Header/AuthHeader';
-import Login from './pages/Login';
-import Home from './pages/Home';
-import PrivateRoute from './utils/PrivateRoute';
-
 import { BrowserRouter as Router, Routes, Route, Navigate, useRoutes, Redirect } from 'react-router-dom';
 
-const routes = [
-    {
-        path: '/',
-        element: <Home />,
-    },
-    {
-        path: 'login',
-        element: <Login />,
-    },
-];
+import AuthHeader from './components/ui/Header/AuthHeader';
+import Login from './pages/Auth/Login';
+import Register from './pages/Auth/Register';
+import Home from './pages/Home';
+import PrivateRoute from './utils/PrivateRoute';
+import AuthRedirecting from './pages/Auth/AuthRedirecting';
+import EmailVerifyMessage from './pages/EmailVerifyMessage';
 
 function Main() {
-
-    const canActivate = () => {
-        return false ? true : <Navigate to="/login" />;
-    };
 
     return (
         <Router>
@@ -32,7 +19,9 @@ function Main() {
                 <Route element={<PrivateRoute />}>
                     <Route element={<Home />} path="/" exact/>
                 </Route>
+                <Route path="/email-verify-message/:token" element={<EmailVerifyMessage />} />
                 <Route element={<Login />} path="/login"/>
+                <Route element={<Register />} path="/register"/>
             </Routes>
         </Router>
     );

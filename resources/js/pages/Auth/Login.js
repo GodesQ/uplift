@@ -1,8 +1,8 @@
 import React from 'react';
-import LoginHeader from '../components/ui/Header/LoginHeader';
-import '../../css/login.css';
-import Footer from '../components/ui/Footer/Footer';
-import LoginForm from '../features/authentication/components/LoginForm';
+import LoginHeader from '../../components/ui/Header/LoginHeader';
+import '../../../css/login.css';
+import Footer from '../../components/ui/Footer/Footer';
+import LoginForm from '../../features/authentication/components/LoginForm';
 
 const Login = () => {
     return (
