@@ -28,7 +28,6 @@ class User extends Authenticatable
         'email_verified_at',
         'is_verify',
         'status',
-        'is_delete',
         'google_authenticated',
         'email',
         'password',
@@ -41,6 +40,8 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
+        'google_authenticated',
+        'is_delete',
     ];
 
     /**

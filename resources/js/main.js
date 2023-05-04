@@ -9,7 +9,8 @@ import Register from './pages/Auth/Register';
 import Home from './pages/Home';
 import PrivateRoute from './utils/PrivateRoute';
 import AuthRedirecting from './pages/Auth/AuthRedirecting';
-import EmailVerifyMessage from './pages/EmailVerifyMessage';
+import EmailVerifyMessage from './pages/EmailVerification/EmailVerifyMessage';
+import EmailVerificationSuccess from './pages/EmailVerification/EmailVerificationSuccess';
 
 function Main() {
 
@@ -20,6 +21,7 @@ function Main() {
                     <Route element={<Home />} path="/" exact/>
                 </Route>
                 <Route path="/email-verify-message/:token" element={<EmailVerifyMessage />} />
+                <Route path='/verification-success' element={<EmailVerificationSuccess />}></Route>
                 <Route element={<Login />} path="/login"/>
                 <Route element={<Register />} path="/register"/>
             </Routes>

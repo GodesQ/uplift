@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { asset } from 'helpers';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, redirect, useNavigate } from 'react-router-dom';
 import useLogin from '../hooks/useLogin';
 import useGoogleLogin from '../hooks/useGoogleLogin';
+import {Connection} from '../../../../../public/js/spark/module/logic/connection';
 
 const LoginForm = () => {
 
@@ -27,8 +28,17 @@ const LoginForm = () => {
 
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
-        const response = await useLogin(dataForm);
+
+        const nam = new Connection();
+        const device_name = nam.getUser().device + ' ' + nam.getUser().platform;
+
+        const response = await useLogin({...dataForm, device_name: device_name});
         setErrors(response?.errors);
+        console.log(response);
+        if(response?.status == 200) {
+            localStorage.setItem('token', response?.data.token);
+            navigate('/', {replace: true});
+        }
     }
 
     return (
